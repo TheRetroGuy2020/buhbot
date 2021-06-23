@@ -1,7 +1,8 @@
 const BaseCommand = require('../../utils/structures/BaseCommand');
 const fs = require('fs');
+const discord = require('discord.js');
 
-module.exports = class TestCommand extends BaseCommand {
+module.exports = class BuhCountCommand extends BaseCommand {
   constructor() {
     super('buhcount', 'counter', []);
   }
@@ -14,12 +15,27 @@ module.exports = class TestCommand extends BaseCommand {
     var tf = false;
     for(var i = 0; databases.servers.length > i; i++){
       if(databases.servers[i].name == name){
-        message.channel.send(databases.servers[i].buhcount + " buhs have been made!");
+        const embedLead = new discord.MessageEmbed()
+            .setColor('#ff0000')
+            .setTitle(name)
+            .setDescription("Server's total **BUH** amount!")
+            .setThumbnail(message.guild.iconURL())
+            .addFields(
+                { name: "**Buhs**", value: ("**"+databases.servers[i].buhcount+"**")}
+            )
+            .setFooter('Made by @JaxTheShep#3609', 'https://i.imgur.com/BdSIFXc.png');
+        message.channel.send(embedLead);
         tf = true;
       }
     }
     if(tf == false){
-      message.channel.send("No buhs have been made!");
+      const embedLead = new discord.MessageEmbed()
+        .setColor('#ff0000')
+        .setTitle(name)
+        .setDescription("No one has **BUH'D** in this server!")
+        .setThumbnail(message.guild.iconURL())
+        .setFooter('Made by @JaxTheShep#3609', 'https://i.imgur.com/BdSIFXc.png');
+      message.channel.send(embedLead);
     }
   }
 }

@@ -2,9 +2,9 @@ const BaseCommand = require('../../utils/structures/BaseCommand');
 const fs = require('fs');
 const discord = require('discord.js');
 
-module.exports = class BuhAllCommand extends BaseCommand {
+module.exports = class ServerTotalCommand extends BaseCommand {
   constructor() {
-    super('buhall', 'counter', []);
+    super('servers', 'counter', []);
   }
 
   async run(client, message, args) {
@@ -13,11 +13,11 @@ module.exports = class BuhAllCommand extends BaseCommand {
     var databases = JSON.parse(data);
     const embedLead = new discord.MessageEmbed()
     .setColor('#ff0000')
-    .setTitle("Complete **BUH** Count!")
+    .setTitle("Server Count!")
     .setThumbnail('https://i.imgur.com/eM0PgxO.png')
-    .setDescription("All **BUH'S** said in all active servers I am in!")
+    .setDescription("Current amount of active servers I am in!")
     .addFields(
-        { name: "**Buhs**", value: ("**"+databases.overall+"**")}
+        { name: "**Servers**", value: ("**"+databases.servers.length+"**")}
     )
     .setFooter('Made by @JaxTheShep#3609', 'https://i.imgur.com/BdSIFXc.png');
     message.channel.send(embedLead);
