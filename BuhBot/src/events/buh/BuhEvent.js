@@ -59,10 +59,14 @@ module.exports = class BuhEvent extends BaseEvent {
                 databases.users[i].buhrank = 'Ultra Daddy Buher';
                 Embedsend(databases.users[i].buhrank, message);
             }
-            else if((databases.users[i].buhcount >= 101)&&(databases.users[i].buhrank.includes('KING BUH') != true)){
+            else if((databases.users[i].buhcount >= 101)&&(databases.users[i].buhcount <= 499)&&(databases.users[i].buhrank.includes('KING BUH') != true)){
                 databases.users[i].buhrank = 'KING BUH';
                 Embedsend(databases.users[i].buhrank, message);
             }
+            else if((databases.users[i].buhcount >= 500)&&(databases.users[i].buhrank.includes('THE GOD OF BUH') != true)){
+              databases.users[i].buhrank = 'THE GOD OF BUH';
+              Embedsend(databases.users[i].buhrank, message);
+          }
           }
         }
         if(tf == false){
