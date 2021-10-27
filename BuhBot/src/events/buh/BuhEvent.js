@@ -26,7 +26,7 @@ module.exports = class BuhEvent extends BaseEvent {
     if(message.content.startsWith(client.prefix)) return;
     var lower = message.content.toLowerCase();
     if (lower.includes('buh') == true) {
-        const data = fs.readFileSync('C:/Users/Administrator/Desktop/BuhBot/buhbot/BuhBot/count.json', 'utf8');
+        const data = fs.readFileSync('C:/Users/Administrator/Desktop/buhbot/BuhBot/count.json', 'utf8');
         var databases = JSON.parse(data);
         var Sname = message.guild.name;
         var Uname = message.member.id;
@@ -76,7 +76,7 @@ module.exports = class BuhEvent extends BaseEvent {
         if(tf2 == false){
           databases.users.push({"nameID": message.member.id,"name": message.member.user.username,"buhcount":1,"buhrank":"Baby Buher"});
         }
-        fs.writeFile('C:/Users/Administrator/Desktop/BuhBot/buhbot/BuhBot/count.json', JSON.stringify(databases), 'utf8', (err) => {
+        fs.writeFile('C:/Users/Administrator/Desktop/buhbot/BuhBot/count.json', JSON.stringify(databases), 'utf8', (err) => {
 
             if (err) {
                 console.log(`Error writing file: ${err}`);

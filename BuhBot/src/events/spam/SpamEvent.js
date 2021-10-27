@@ -53,7 +53,7 @@ module.exports = class BuhEvent extends BaseEvent {
   async run(client, message) {
     if (message.author.bot) return;
     if(message.content.startsWith(client.prefix)) return;
-    const data = fs.readFileSync('F:/Users/TheRetroGuy/Documents/GitHub/buhbot/BuhBot/servermod.json', 'utf8');
+    const data = fs.readFileSync('C:/Users/Administrator/Desktop/buhbot/BuhBot/servermod.json', 'utf8');
     var databases = JSON.parse(data);
     var Sname = message.guild.name;
     var modChannel;

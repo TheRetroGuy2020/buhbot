@@ -21,7 +21,7 @@ module.exports = class BuhUserCommand extends BaseCommand {
 
   async run(client, message, args) {
 
-    const data = fs.readFileSync('C:/Users/Administrator/Desktop/BuhBot/buhbot/BuhBot/count.json', 'utf8');
+    const data = fs.readFileSync('C:/Users/Administrator/Desktop/buhbot/BuhBot/count.json', 'utf8');
     var databases = JSON.parse(data);
     var Uname = message.member.id;
     var tf = false;

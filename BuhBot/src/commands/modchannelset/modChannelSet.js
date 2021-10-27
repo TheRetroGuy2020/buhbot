@@ -37,7 +37,7 @@ module.exports = class BuhUserCommand extends BaseCommand {
 
   async run(client, message, args) {
 
-    const data = fs.readFileSync('C:/Users/Administrator/Desktop/BuhBot/buhbot/BuhBot/servermod.json', 'utf8');
+    const data = fs.readFileSync('C:/Users/Administrator/Desktop/buhbot/BuhBot/servermod.json', 'utf8');
     var databases = JSON.parse(data);
     var Sname = message.guild.name;
     var tf = false;
@@ -55,7 +55,7 @@ module.exports = class BuhUserCommand extends BaseCommand {
       if(tf == false){
         databases.servers.push({"name": message.guild.name,"serversmod":channelMention(message)});
       }
-      fs.writeFile('C:/Users/Administrator/Desktop/BuhBot/buhbot/BuhBot/servermod.json', JSON.stringify(databases), 'utf8', (err) => {
+      fs.writeFile('C:/Users/Administrator/Desktop/buhbot/BuhBot/servermod.json', JSON.stringify(databases), 'utf8', (err) => {
 
         if (err) {
             console.log(`Error writing file: ${err}`);
